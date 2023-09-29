@@ -20,7 +20,7 @@ final class CoreDataStorage {
     private lazy var persistentContainer: NSPersistentContainer = {
         print(NSPersistentContainer.defaultDirectoryURL())
         
-        let container = NSPersistentContainer(name: "AnimeList")
+        let container = NSPersistentContainer(name: "MyAnime")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 assertionFailure("CoreDataStorage: Unresolved error \(error), \(error.userInfo)")
