@@ -134,14 +134,14 @@ enum AnimeTopSubtype: String {
 }
 
 class TopAnimesResponse: Decodable {
-    var data: [TopAnimeResponse]
+    var data: [AnimeDetails]
     
     enum CodingKeys: String, CodingKey { case data }
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        data = try container.decode([TopAnimeResponse].self, forKey: .data)
+        data = try container.decode([AnimeDetails].self, forKey: .data)
     }
 }
 

@@ -60,6 +60,9 @@ final class NetworkManager: Networking {
     @discardableResult func request(url: URL, completion: @escaping (Data?, Error?) -> Void) -> URLSessionTask {
         let task = session.dataTask(with: url) { (data, response, error) in
             do {
+                print("Network Data \(data)")
+//                print(String(data: data!, encoding: .utf8) ?? "Data could not be printed")
+                
                 try validate(response)
 
                 guard error == nil else {

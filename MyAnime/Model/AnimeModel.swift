@@ -56,7 +56,7 @@ class DefaultAnimeFetchRepository {
     // MARK: TOP ANIMES
     var topItemsLoadPerPage: Int = 50
     
-    func fetchTop(page: Int, subtype: AnimeTopSubtype, completion: @escaping (Result<[TopAnimeResponse], Error>) -> Void) {
+    func fetchTop(page: Int, subtype: AnimeTopSubtype, completion: @escaping (Result<[AnimeDetails], Error>) -> Void) {
         
         let endpointURL = apiPath.top(at: page, subtype: subtype)
         print("Top Fetch URL: \(endpointURL)")
