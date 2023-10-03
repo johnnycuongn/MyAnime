@@ -10,9 +10,11 @@ import SwiftUI
 struct AnimeDetailsPage: View {
     let anime: AnimeDetails
     @State private var isFavorite: Bool = false
+    @ObservedObject var viewModel = AnimeDetailsViewModel()
     
     init(anime: AnimeDetails) {
         self.anime = anime
+        viewModel.load(anime: anime)
     }
 
     var body: some View {
@@ -50,11 +52,11 @@ struct AnimeDetailsPage: View {
                 VStack {
                     Spacer()
                     Button(action: {
-                        isFavorite.toggle()
+                        viewModel.favoriteAnime(id: self.anime.malID, title: self.anime.title, imageURL: self.anime.images?.jpg.image_url ?? "")
                     }) {
                         HStack {
-                            Text(isFavorite ? "Favorited" : "Add to Favorites")
-                            Image(systemName: isFavorite ? "heart.fill" : "heart")
+                            Text(viewModel.isAnimeFavorited ? "Favorited" : "Add to Favorites")
+                            Image(systemName: viewModel.isAnimeFavorited ? "heart.fill" : "heart")
                         }
                         .padding()
                         .foregroundColor(.white)

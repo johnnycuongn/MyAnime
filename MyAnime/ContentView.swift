@@ -20,6 +20,10 @@ struct ContentView: View {
                     Image(systemName: "house.fill")
                     Text("Home")
                 }
+                FavouriteAnimeView().tabItem {
+                    Image(systemName: "house.fill")
+                    Text("Favourite")
+                }
             }
         }
     }

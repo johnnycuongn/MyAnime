@@ -11,6 +11,10 @@ struct FavouriteAnimeView: View {
     
     @ObservedObject var viewModel = FavouriteAnimeViewModel()
     
+    init() {
+        print("Favoriate anime loading")
+    }
+    
     var body: some View {
         ScrollView {
                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
@@ -19,6 +23,8 @@ struct FavouriteAnimeView: View {
                    }
                }
                .padding(16)
+        }.onAppear {
+            viewModel.load()
         }
     }
 }

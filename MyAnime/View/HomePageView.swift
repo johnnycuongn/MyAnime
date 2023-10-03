@@ -12,7 +12,7 @@ struct HomePageView: View {
     @ObservedObject var viewModel = HomePageViewModel()
     
     init() {
-       
+        viewModel.loadAnimes(subtype: .bydefault)
     }
     
     var body: some View {
@@ -24,8 +24,6 @@ struct HomePageView: View {
                    }
                }
                .padding(16)
-        }.onAppear {
-            viewModel.loadAnimes(subtype: .bydefault)
         }
     }
 }

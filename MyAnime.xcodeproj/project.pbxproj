@@ -28,6 +28,7 @@
 		40CE0FE12ACC62CA00F93427 /* FavouriteAnimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FE02ACC62CA00F93427 /* FavouriteAnimeView.swift */; };
 		40CE0FE32ACC632B00F93427 /* FavouriteAnimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FE22ACC632B00F93427 /* FavouriteAnimeViewModel.swift */; };
 		40CE0FE52ACC664500F93427 /* FavouriteAnimeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FE42ACC664500F93427 /* FavouriteAnimeCardView.swift */; };
+		40CE0FE72ACC696B00F93427 /* AnimeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FE62ACC696B00F93427 /* AnimeDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		40CE0FE02ACC62CA00F93427 /* FavouriteAnimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteAnimeView.swift; sourceTree = "<group>"; };
 		40CE0FE22ACC632B00F93427 /* FavouriteAnimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteAnimeViewModel.swift; sourceTree = "<group>"; };
 		40CE0FE42ACC664500F93427 /* FavouriteAnimeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteAnimeCardView.swift; sourceTree = "<group>"; };
+		40CE0FE62ACC696B00F93427 /* AnimeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeDetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			children = (
 				40CE0FCF2ACB9F2500F93427 /* HomePageViewModel.swift */,
 				40CE0FE22ACC632B00F93427 /* FavouriteAnimeViewModel.swift */,
+				40CE0FE62ACC696B00F93427 /* AnimeDetailsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 			files = (
 				40CE0FB42AC7047100F93427 /* FavouriteAnimeModel.swift in Sources */,
 				40CE0FE32ACC632B00F93427 /* FavouriteAnimeViewModel.swift in Sources */,
+				40CE0FE72ACC696B00F93427 /* AnimeDetailsViewModel.swift in Sources */,
 				40CE0FE12ACC62CA00F93427 /* FavouriteAnimeView.swift in Sources */,
 				40CE0FB12AC7030100F93427 /* CoreDataManager.swift in Sources */,
 				40CE0F9A2AC6FFD200F93427 /* MyAnimeApp.swift in Sources */,

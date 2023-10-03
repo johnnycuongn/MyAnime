@@ -14,6 +14,9 @@ class FavouriteAnimeViewModel: ObservableObject {
     private let model = DefaultFavoriteAnimeModel()
     
     init() {
+    }
+    
+    func load() {
         model.getAnimes { result in
             switch result {
             case .success(let animes):
