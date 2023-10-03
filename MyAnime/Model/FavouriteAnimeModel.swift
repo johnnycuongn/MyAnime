@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 
 protocol PersonalAnimeStorageCreateDelete {
-    func add(id: Int, imageData: Data?, title: String?, date: Date)
+    func add(id: Int, imageData: Data?, title: String, date: Date?)
     
     func remove(id: Int, completion: @escaping () -> Void)
     
@@ -46,6 +46,7 @@ struct FavouriteAnime {
 }
 
 class DefaultFavoriteAnimeModel: FavouriteAnimeModel {
+    
     private var storage: CoreDataStorage = CoreDataStorage.shared
     
     init(storage: CoreDataStorage = CoreDataStorage.shared) {
@@ -66,6 +67,7 @@ class DefaultFavoriteAnimeModel: FavouriteAnimeModel {
                 
             }
             catch let error {
+                print("Error get animes \(error)")
                 completion(.failure(error))
             }
         }
@@ -140,7 +142,7 @@ class DefaultFavoriteAnimeModel: FavouriteAnimeModel {
     private func fetchRequest() -> NSFetchRequest<AnimeEntity> {
         let request = AnimeEntity.fetchRequest() as NSFetchRequest<AnimeEntity>
         
-        request.sortDescriptors = [NSSortDescriptor(key: "dateSaved", ascending: true)]
+        request.sortDescriptors = [NSSortDescriptor(key: "dateUpdated", ascending: true)]
         
         // Fetch only the favorite anime
         let predicate = NSPredicate(format: "isFavourited == %@", NSNumber(value: true))
