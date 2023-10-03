@@ -116,6 +116,66 @@ class AnimeDetails: Decodable {
         genres = try container.decode([GenreDisplay].self, forKey: .genres)
 //        studios = try container.decode([StudioDisplay].self, forKey: .studios)
     }
+    
+    static func mock() throws -> AnimeDetails? {
+        let jsonString = """
+        {
+            "mal_id": 1,
+            "url": "https://example.com",
+            "images": {
+                "jpg": {
+                  "image_url": "https://cdn.myanimelist.net/images/anime/10/18793.jpg",
+                  "small_image_url": "https://cdn.myanimelist.net/images/anime/10/18793t.jpg",
+                  "large_image_url": "https://cdn.myanimelist.net/images/anime/10/18793l.jpg"
+                },
+                "webp": {
+                  "image_url": "https://cdn.myanimelist.net/images/anime/10/18793.webp",
+                  "small_image_url": "https://cdn.myanimelist.net/images/anime/10/18793t.webp",
+                  "large_image_url": "https://cdn.myanimelist.net/images/anime/10/18793l.webp"
+                }
+            },
+            "title": "Example Anime",
+            "title_english": "Example Anime in English",
+            "synopsis": "This is a sample synopsis.",
+            "type": "TV",
+            "episodes": 12,
+            "score": 8.5,
+            "scored_by": 50000,
+            "members": 100000,
+            "rank": 1,
+            "popularity": 1,
+            "favorites": 10000,
+            "rating": "PG-13",
+            "status": "Airing",
+            "genres": [
+                {
+                    "mal_id": 8,
+                  "type": "anime",
+                  "name": "Drama",
+                  "url": "https://myanimelist.net/anime/genre/8/Drama"
+                }
+            ]
+        }
+        """
+        print("Mock")
+        let jsonData = Data(jsonString.utf8)
+        print(String(data: jsonData, encoding: .utf8))
+        let decoder = JSONDecoder()
+        do {
+            let animeDetails = try decoder.decode(AnimeDetails.self, from: jsonData)
+            print("Anime")
+            print(animeDetails ?? "No DATA")
+            return animeDetails
+
+        } catch let error {
+            print(error)
+        }
+        
+        
+        return nil
+        
+        
+    }
 }
 
 

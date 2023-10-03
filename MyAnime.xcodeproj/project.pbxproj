@@ -23,6 +23,8 @@
 		40CE0FCD2ACB8ABD00F93427 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FCC2ACB8ABD00F93427 /* Model.swift */; };
 		40CE0FD02ACB9F2500F93427 /* HomePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FCF2ACB9F2500F93427 /* HomePageViewModel.swift */; };
 		40CE0FD32ACBA10000F93427 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FD22ACBA10000F93427 /* HomePageView.swift */; };
+		40CE0FD62ACBCC9F00F93427 /* AnimeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FD52ACBCC9F00F93427 /* AnimeCardView.swift */; };
+		40CE0FD82ACBD30800F93427 /* AnimeDetailsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FD72ACBD30800F93427 /* AnimeDetailsPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		40CE0FCC2ACB8ABD00F93427 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		40CE0FCF2ACB9F2500F93427 /* HomePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewModel.swift; sourceTree = "<group>"; };
 		40CE0FD22ACBA10000F93427 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
+		40CE0FD52ACBCC9F00F93427 /* AnimeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeCardView.swift; sourceTree = "<group>"; wrapsLines = 0; };
+		40CE0FD72ACBD30800F93427 /* AnimeDetailsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeDetailsPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,9 +144,19 @@
 		40CE0FD12ACBA0F400F93427 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				40CE0FD42ACBCC8E00F93427 /* Components */,
 				40CE0FD22ACBA10000F93427 /* HomePageView.swift */,
+				40CE0FD72ACBD30800F93427 /* AnimeDetailsPage.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		40CE0FD42ACBCC8E00F93427 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				40CE0FD52ACBCC9F00F93427 /* AnimeCardView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +242,8 @@
 				40CE0FC22ACB88E600F93427 /* AnimeEntity+CoreDataProperties.swift in Sources */,
 				40CE0FA12AC6FFD200F93427 /* ContentView.swift in Sources */,
 				40CE0FD32ACBA10000F93427 /* HomePageView.swift in Sources */,
+				40CE0FD62ACBCC9F00F93427 /* AnimeCardView.swift in Sources */,
+				40CE0FD82ACBD30800F93427 /* AnimeDetailsPage.swift in Sources */,
 				40CE0FCB2ACB8A7300F93427 /* AnimeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
