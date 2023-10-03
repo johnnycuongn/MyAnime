@@ -27,3 +27,9 @@ extension AnimeEntity {
 extension AnimeEntity : Identifiable {
 
 }
+
+extension AnimeEntity {
+    func toModel() -> FavouriteAnime {
+        return .init(id: Int(id), title: title, imageData: image, dateUpdated: dateUpdated)
+    }
+}

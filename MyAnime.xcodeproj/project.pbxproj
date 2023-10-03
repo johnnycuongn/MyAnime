@@ -14,7 +14,7 @@
 		40CE0FA72AC6FFD300F93427 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40CE0FA62AC6FFD300F93427 /* Preview Assets.xcassets */; };
 		40CE0FAF2AC701C700F93427 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FAE2AC701C700F93427 /* NetworkManager.swift */; };
 		40CE0FB12AC7030100F93427 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FB02AC7030100F93427 /* CoreDataManager.swift */; };
-		40CE0FB42AC7047100F93427 /* PersonalAnimeDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FB32AC7047100F93427 /* PersonalAnimeDataStorage.swift */; };
+		40CE0FB42AC7047100F93427 /* FavouriteAnimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FB32AC7047100F93427 /* FavouriteAnimeModel.swift */; };
 		40CE0FC12ACB88E600F93427 /* AnimeEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FBF2ACB88E600F93427 /* AnimeEntity+CoreDataClass.swift */; };
 		40CE0FC22ACB88E600F93427 /* AnimeEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FC02ACB88E600F93427 /* AnimeEntity+CoreDataProperties.swift */; };
 		40CE0FC52ACB89B800F93427 /* JikanAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FC42ACB89B800F93427 /* JikanAPI.swift */; };
@@ -37,7 +37,7 @@
 		40CE0FA62AC6FFD300F93427 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		40CE0FAE2AC701C700F93427 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		40CE0FB02AC7030100F93427 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		40CE0FB32AC7047100F93427 /* PersonalAnimeDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAnimeDataStorage.swift; sourceTree = "<group>"; };
+		40CE0FB32AC7047100F93427 /* FavouriteAnimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteAnimeModel.swift; sourceTree = "<group>"; };
 		40CE0FBF2ACB88E600F93427 /* AnimeEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimeEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		40CE0FC02ACB88E600F93427 /* AnimeEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnimeEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		40CE0FC42ACB89B800F93427 /* JikanAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JikanAPI.swift; sourceTree = "<group>"; };
@@ -119,7 +119,6 @@
 				40CE0FBF2ACB88E600F93427 /* AnimeEntity+CoreDataClass.swift */,
 				40CE0FC02ACB88E600F93427 /* AnimeEntity+CoreDataProperties.swift */,
 				40CE0FB02AC7030100F93427 /* CoreDataManager.swift */,
-				40CE0FB32AC7047100F93427 /* PersonalAnimeDataStorage.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -129,6 +128,7 @@
 			children = (
 				40CE0FCA2ACB8A7300F93427 /* AnimeModel.swift */,
 				40CE0FCC2ACB8ABD00F93427 /* Model.swift */,
+				40CE0FB32AC7047100F93427 /* FavouriteAnimeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -229,7 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40CE0FB42AC7047100F93427 /* PersonalAnimeDataStorage.swift in Sources */,
+				40CE0FB42AC7047100F93427 /* FavouriteAnimeModel.swift in Sources */,
 				40CE0FB12AC7030100F93427 /* CoreDataManager.swift in Sources */,
 				40CE0F9A2AC6FFD200F93427 /* MyAnimeApp.swift in Sources */,
 				40CE0F9F2AC6FFD200F93427 /* MyAnime.xcdatamodeld in Sources */,

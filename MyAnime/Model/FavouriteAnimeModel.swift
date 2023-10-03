@@ -19,24 +19,66 @@ protocol PersonalAnimeStorageCreateDelete {
 protocol PersonalAnimeStorageRead {
 }
 
-protocol PersonalAnimeStorage: PersonalAnimeStorageCreateDelete, PersonalAnimeStorageRead  {
+protocol FavouriteAnimeModel: PersonalAnimeStorageCreateDelete, PersonalAnimeStorageRead  {
 
     
 }
 
-class DefaultPersonalAnimeStorage: PersonalAnimeStorage {
+struct FavouriteAnime {
+    
+    var id: Int
+    var title: String?
+    
+    var imageData: Data?
+    var dateUpdated: Date?
+    
+    
+    func toEntity(in context: NSManagedObjectContext) -> AnimeEntity {
+        let entity: AnimeEntity = .init(context: context)
+        entity.id = Int64(id)
+        entity.title = title
+        
+        entity.image = imageData
+        entity.dateUpdated = dateUpdated
+        
+        return entity
+    }
+}
+
+class DefaultFavoriteAnimeModel: FavouriteAnimeModel {
     private var storage: CoreDataStorage = CoreDataStorage.shared
     
     init(storage: CoreDataStorage = CoreDataStorage.shared) {
         self.storage = storage
     }
     
-    func add(id: Int, imageData: Data?, title: String?, date: Date) {
+    func getAnimes(_ completion: @escaping (Result<[FavouriteAnime], Error>) -> Void) {
+        storage.performBackgroundTask { (context) in
+            do {
+                let fetchRequest = self.fetchRequest()
+                let animeEntities = try context.fetch(fetchRequest)
+                
+                completion(
+                    .success(animeEntities.map {
+                        $0.toModel()
+                    })
+                )
+                
+            }
+            catch let error {
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func add(id: Int, imageData: Data?, title: String, date: Date?) {
         let entity = AnimeEntity(context: storage.context)
         
         entity.id = Int64(id)
         entity.image = imageData
         entity.title = title
+        entity.isFavourited = true
+        entity.dateUpdated = date ?? Date()
         
         storage.saveContext()
         
@@ -99,6 +141,10 @@ class DefaultPersonalAnimeStorage: PersonalAnimeStorage {
         let request = AnimeEntity.fetchRequest() as NSFetchRequest<AnimeEntity>
         
         request.sortDescriptors = [NSSortDescriptor(key: "dateSaved", ascending: true)]
+        
+        // Fetch only the favorite anime
+        let predicate = NSPredicate(format: "isFavourited == %@", NSNumber(value: true))
+        request.predicate = predicate
         
         return request
     }
