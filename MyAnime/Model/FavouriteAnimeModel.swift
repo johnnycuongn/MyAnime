@@ -9,9 +9,9 @@ import Foundation
 import CoreData
 
 protocol PersonalAnimeStorageCreateDelete {
-    func add(id: Int, imageData: Data?, title: String, date: Date?)
+    func add(id: Int, imageURL: String, title: String, date: Date?, completion: @escaping (Bool) -> Void)
     
-    func remove(id: Int, completion: @escaping () -> Void)
+    func remove(id: Int, completion: @escaping (Bool) -> Void)
     
     func isIDExist(_ id: Int, completion: @escaping (Bool) -> Void)
 }
@@ -73,20 +73,33 @@ class DefaultFavoriteAnimeModel: FavouriteAnimeModel {
         }
     }
     
-    func add(id: Int, imageData: Data?, title: String, date: Date?) {
+    func add(id: Int, imageURL: String, title: String, date: Date?, completion: @escaping (Bool) -> Void) {
         let entity = AnimeEntity(context: storage.context)
         
-        entity.id = Int64(id)
-        entity.image = imageData
-        entity.title = title
-        entity.isFavourited = true
-        entity.dateUpdated = date ?? Date()
-        
-        storage.saveContext()
+        if let url = URL(string: imageURL) {
+            URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+                guard let data = data else {
+                    completion(false)
+                    return
+                }
+                print("Image data \(data)")
+                
+                entity.id = Int64(id)
+                entity.title = title
+                entity.image = data
+                entity.isFavourited = true
+                entity.dateUpdated = date ?? Date()
+                
+                self?.storage.saveContext()
+                
+                completion(true)
+                
+            }.resume()
+        }
         
     }
     
-    func remove(id: Int, completion: @escaping () -> Void) {
+    func remove(id: Int, completion: @escaping (Bool) -> Void) {
         let request = requestFor(id: id)
         
         
@@ -94,14 +107,17 @@ class DefaultFavoriteAnimeModel: FavouriteAnimeModel {
             let asyncFetchRequest = NSAsynchronousFetchRequest(fetchRequest: request) {
                 (asyncFetchResult) in
                 
-                guard let idArray = asyncFetchResult.finalResult else { return }
+                guard let idArray = asyncFetchResult.finalResult else {
+                    completion(false)
+                    return
+                }
                 
                 for id in idArray {
                     self.storage.context.delete(id)
                 }
                 
                 self.storage.saveContext()
-                completion()
+                completion(true)
             }
             
             try storage.context.execute(asyncFetchRequest)
@@ -109,6 +125,7 @@ class DefaultFavoriteAnimeModel: FavouriteAnimeModel {
         }
         catch let error {
             print("Data Manager Error: \(error)")
+            completion(false)
         }
             
     }
