@@ -12,7 +12,7 @@ struct ContentView: View {
     
     init() {
         let repo = DefaultAnimeFetchRepository()
-        repo.fetchTop(page: 2, subtype: .bydefault) {  (result) in
+        repo.fetchTop(page: 1, subtype: .bydefault) {  (result) in
             switch result {
             case .success(let animes):
                 print("Success")

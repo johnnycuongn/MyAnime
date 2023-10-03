@@ -21,6 +21,8 @@
 		40CE0FC82ACB8A0C00F93427 /* ServicesExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FC72ACB8A0C00F93427 /* ServicesExtensions.swift */; };
 		40CE0FCB2ACB8A7300F93427 /* AnimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FCA2ACB8A7300F93427 /* AnimeModel.swift */; };
 		40CE0FCD2ACB8ABD00F93427 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FCC2ACB8ABD00F93427 /* Model.swift */; };
+		40CE0FD02ACB9F2500F93427 /* HomePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FCF2ACB9F2500F93427 /* HomePageViewModel.swift */; };
+		40CE0FD32ACBA10000F93427 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FD22ACBA10000F93427 /* HomePageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		40CE0FC72ACB8A0C00F93427 /* ServicesExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesExtensions.swift; sourceTree = "<group>"; };
 		40CE0FCA2ACB8A7300F93427 /* AnimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeModel.swift; sourceTree = "<group>"; };
 		40CE0FCC2ACB8ABD00F93427 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		40CE0FCF2ACB9F2500F93427 /* HomePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewModel.swift; sourceTree = "<group>"; };
+		40CE0FD22ACBA10000F93427 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 		40CE0F982AC6FFD200F93427 /* MyAnime */ = {
 			isa = PBXGroup;
 			children = (
+				40CE0FD12ACBA0F400F93427 /* View */,
+				40CE0FCE2ACB9F0800F93427 /* ViewModel */,
 				40CE0FC32ACB898B00F93427 /* Model */,
 				40CE0FB22AC703AB00F93427 /* Storage */,
 				40CE0FAD2AC701A800F93427 /* Services */,
@@ -121,6 +127,22 @@
 				40CE0FCC2ACB8ABD00F93427 /* Model.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		40CE0FCE2ACB9F0800F93427 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				40CE0FCF2ACB9F2500F93427 /* HomePageViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		40CE0FD12ACBA0F400F93427 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				40CE0FD22ACBA10000F93427 /* HomePageView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +219,7 @@
 				40CE0FB12AC7030100F93427 /* CoreDataManager.swift in Sources */,
 				40CE0F9A2AC6FFD200F93427 /* MyAnimeApp.swift in Sources */,
 				40CE0F9F2AC6FFD200F93427 /* MyAnime.xcdatamodeld in Sources */,
+				40CE0FD02ACB9F2500F93427 /* HomePageViewModel.swift in Sources */,
 				40CE0FC82ACB8A0C00F93427 /* ServicesExtensions.swift in Sources */,
 				40CE0FC52ACB89B800F93427 /* JikanAPI.swift in Sources */,
 				40CE0FCD2ACB8ABD00F93427 /* Model.swift in Sources */,
@@ -204,6 +227,7 @@
 				40CE0FC12ACB88E600F93427 /* AnimeEntity+CoreDataClass.swift in Sources */,
 				40CE0FC22ACB88E600F93427 /* AnimeEntity+CoreDataProperties.swift in Sources */,
 				40CE0FA12AC6FFD200F93427 /* ContentView.swift in Sources */,
+				40CE0FD32ACBA10000F93427 /* HomePageView.swift in Sources */,
 				40CE0FCB2ACB8A7300F93427 /* AnimeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
