@@ -76,7 +76,6 @@ struct AnimeDetailsPage_Previews: PreviewProvider {
             guard data != nil else {
                 return AnyView(VStack {
                    Text("No Data")
-                   // Other common elements
                })
             }
             
@@ -88,7 +87,6 @@ struct AnimeDetailsPage_Previews: PreviewProvider {
         
         return AnyView(VStack {
            Text("Error")
-           // Other common elements
        })
-    }////
+    }
 }
