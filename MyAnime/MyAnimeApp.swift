@@ -9,12 +9,17 @@ import SwiftUI
 
 @main
 struct MyAnimeApp: App {
-    let persistenceController = PersistenceController.shared
+    let persistenceController = CoreDataStorage.shared
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
+    }
+}
+
+struct Previews_MyAnimeApp_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }
