@@ -75,6 +75,8 @@ class DefaultAnimeFetchRepository {
             do {
                 let topAnimeMain = try JSONDecoder().decode(TopAnimesResponse.self, from: data)
                 
+                print("Top Anime \(topAnimeMain)")
+                
                 DispatchQueue.main.async {
                     completion(.success(topAnimeMain.data))
                 }

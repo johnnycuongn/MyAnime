@@ -35,13 +35,24 @@ class ShortDisplayDTO: Decodable {
 
 class GenreDisplay: ShortDisplayDTO {}
 
+struct Images: Decodable {
+    let jpg: ImageType
+    let webp: ImageType
+}
+
+struct ImageType: Decodable {
+    let image_url: String
+    let small_image_url: String
+    let large_image_url: String
+}
+
+
 
 class AnimeDetails: Decodable {
     
     var malID: Int
     var url: String?
-    var imageURL: URL?
-    var trailerURL: URL?
+    var images: Images?
     var title: String
     var titleEnglish: String?
     var synopsis: String?
@@ -52,7 +63,6 @@ class AnimeDetails: Decodable {
     var members: Int?
     var rank: Int?
     var popularity: Int?
-    var premieredDate: String?
     var favorites: Int?
     var rating: String?
     var status: String?
@@ -63,8 +73,7 @@ class AnimeDetails: Decodable {
     enum CodingKeys: String, CodingKey {
         case malID = "mal_id"
         case url
-        case imageURL = "image_url"
-        case trailerURL = "trailer_url"
+        case images
         case title
         case titleEnglish = "title_english"
         case synopsis
@@ -75,7 +84,6 @@ class AnimeDetails: Decodable {
         case members
         case rank
         case popularity
-        case premieredDate = "premiered"
         case favorites
         case rating
         case status
@@ -90,8 +98,7 @@ class AnimeDetails: Decodable {
         
         malID = try container.decode(Int.self, forKey: .malID)
         url = try? container.decode(String.self, forKey: .url)
-        imageURL = try? container.decode(URL.self, forKey: .imageURL)
-        trailerURL = try? container.decode(URL.self, forKey: .trailerURL)
+        images = try? container.decode(Images.self, forKey: .images)
         title = try container.decode(String.self, forKey: .title)
         titleEnglish = try? container.decode(String.self, forKey: .titleEnglish)
         synopsis = try? container.decode(String.self, forKey: .synopsis)
@@ -102,7 +109,6 @@ class AnimeDetails: Decodable {
         members = try? container.decode(Int.self, forKey: .members)
         rank = try? container.decode(Int.self, forKey: .rank)
         popularity = try? container.decode(Int.self, forKey: .popularity)
-        premieredDate = try? container.decode(String.self, forKey: .premieredDate)
         favorites = try? container.decode(Int.self, forKey: .favorites)
         rating = try? container.decode(String.self, forKey: .rating)
         status = try? container.decode(String.self, forKey: .status)
@@ -140,20 +146,7 @@ class TopAnimesResponse: Decodable {
 }
 
 class TopAnimeResponse: AnimeThumbnailResponse {
-    var rank: Int
-    
-    enum TopCodingKeys: String, CodingKey {
-        case rank
-    }
-    
-    required init(from decoder: Decoder) throws {
-        
-        let container = try decoder.container(keyedBy: TopCodingKeys.self)
-        self.rank = try container.decode(Int.self, forKey: .rank)
-        
-        try super.init(from: decoder)
-        
-    }
+
 }
 
 class AnimeThumbnailResponse: Decodable {
