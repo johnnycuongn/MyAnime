@@ -11,22 +11,17 @@ import CoreData
 struct ContentView: View {
     
     init() {
-        let repo = DefaultAnimeFetchRepository()
-        repo.fetchTop(page: 1, subtype: .bydefault) {  (result) in
-            switch result {
-            case .success(let animes):
-                print("Success")
-                print(animes)
-                
-            case .failure(let error):
-                print("Error \(error)")
-            }
-            
-        }
     }
 
     var body: some View {
-       Text("s")
+        NavigationView {
+            TabView {
+                HomePageView().tabItem {
+                    Image(systemName: "house.fill")
+                    Text("Home")
+                }
+            }
+        }
     }
 
 }
