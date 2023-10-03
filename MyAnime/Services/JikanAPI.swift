@@ -118,7 +118,7 @@ class JikanAnimeAPI {
 extension JikanAnimeAPI: APIPath {
     // MARK: TOP
     func top(at page: Int = 1, subtype: AnimeTopSubtype) -> URL {
-        var fetchURL = top.appendingPathComponent(String(page))
+        var fetchURL = top.appending(queryItems: [URLQueryItem(name: "page", value: "\(page)")])
         
         switch subtype {
         case .bydefault:
