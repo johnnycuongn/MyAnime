@@ -91,7 +91,6 @@
 				40CE0FD12ACBA0F400F93427 /* View */,
 				40CE0FCE2ACB9F0800F93427 /* ViewModel */,
 				40CE0FC32ACB898B00F93427 /* Model */,
-				40CE0FB22AC703AB00F93427 /* Storage */,
 				40CE0FAD2AC701A800F93427 /* Services */,
 				40CE0F992AC6FFD200F93427 /* MyAnimeApp.swift */,
 				40CE0FA02AC6FFD200F93427 /* ContentView.swift */,
@@ -114,6 +113,7 @@
 		40CE0FAD2AC701A800F93427 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				40CE0FB22AC703AB00F93427 /* Storage */,
 				40CE0FAE2AC701C700F93427 /* NetworkManager.swift */,
 				40CE0FC42ACB89B800F93427 /* JikanAPI.swift */,
 				40CE0FC72ACB8A0C00F93427 /* ServicesExtensions.swift */,
