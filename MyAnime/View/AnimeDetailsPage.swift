@@ -14,7 +14,6 @@ struct AnimeDetailsPage: View {
     
     init(anime: AnimeDetails) {
         self.anime = anime
-        viewModel.load(anime: anime)
     }
 
     var body: some View {
@@ -67,6 +66,9 @@ struct AnimeDetailsPage: View {
                 }
             }
             .frame(maxWidth: .infinity)
+            .onAppear {
+                viewModel.load(anime: anime)
+            }
         }
 }
 struct AnimeDetailsPage_Previews: PreviewProvider {
