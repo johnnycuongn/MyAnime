@@ -27,7 +27,6 @@
 		40CE0FD82ACBD30800F93427 /* AnimeDetailsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FD72ACBD30800F93427 /* AnimeDetailsPage.swift */; };
 		40CE0FE12ACC62CA00F93427 /* FavouriteAnimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FE02ACC62CA00F93427 /* FavouriteAnimeView.swift */; };
 		40CE0FE32ACC632B00F93427 /* FavouriteAnimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FE22ACC632B00F93427 /* FavouriteAnimeViewModel.swift */; };
-		40CE0FE52ACC664500F93427 /* FavouriteAnimeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FE42ACC664500F93427 /* FavouriteAnimeCardView.swift */; };
 		40CE0FE72ACC696B00F93427 /* AnimeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FE62ACC696B00F93427 /* AnimeDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,7 +53,6 @@
 		40CE0FD72ACBD30800F93427 /* AnimeDetailsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeDetailsPage.swift; sourceTree = "<group>"; };
 		40CE0FE02ACC62CA00F93427 /* FavouriteAnimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteAnimeView.swift; sourceTree = "<group>"; };
 		40CE0FE22ACC632B00F93427 /* FavouriteAnimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteAnimeViewModel.swift; sourceTree = "<group>"; };
-		40CE0FE42ACC664500F93427 /* FavouriteAnimeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteAnimeCardView.swift; sourceTree = "<group>"; };
 		40CE0FE62ACC696B00F93427 /* AnimeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeDetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,7 +164,6 @@
 			isa = PBXGroup;
 			children = (
 				40CE0FD52ACBCC9F00F93427 /* AnimeCardView.swift */,
-				40CE0FE42ACC664500F93427 /* FavouriteAnimeCardView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -260,7 +257,6 @@
 				40CE0FD62ACBCC9F00F93427 /* AnimeCardView.swift in Sources */,
 				40CE0FD82ACBD30800F93427 /* AnimeDetailsPage.swift in Sources */,
 				40CE0FCB2ACB8A7300F93427 /* AnimeModel.swift in Sources */,
-				40CE0FE52ACC664500F93427 /* FavouriteAnimeCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

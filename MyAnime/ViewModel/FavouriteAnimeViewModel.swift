@@ -28,4 +28,14 @@ class FavouriteAnimeViewModel: ObservableObject {
         }
     }
     
+    func unfavoriteAnime(id: Int) {
+        self.model.remove(id: id) { success in
+            if !success {
+                self.error = "Error removing anime"
+            } else {
+                self.load()
+            }
+        }
+    }
+    
 }
