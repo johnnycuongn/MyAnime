@@ -16,14 +16,21 @@ struct HomePageView: View {
     }
     
     var body: some View {
-
-        ScrollView {
-               LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
-                   ForEach(viewModel.topAnimes, id: \.malID) { anime in
-                       AnimeCardView(anime: anime)
-                   }
-               }
-               .padding(16)
+        ZStack {
+            if viewModel.loading {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: .blue))
+                    .scaleEffect(2, anchor: .center)
+            } else {
+                ScrollView {
+                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
+                        ForEach(viewModel.topAnimes, id: \.malID) { anime in
+                            AnimeCardView(anime: anime)
+                        }
+                    }
+                    .padding(16)
+                }
+            }
         }
     }
 }

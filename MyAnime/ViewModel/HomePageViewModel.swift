@@ -10,10 +10,12 @@ import Foundation
 class HomePageViewModel: ObservableObject {
     @Published var topAnimes = [AnimeDetails]()
     @Published var error: String? = .none
+    @Published var loading: Bool = false
     
     let model: DefaultAnimeFetchRepository = DefaultAnimeFetchRepository()
     
     func loadAnimes(page: Int = 2, subtype: AnimeTopSubtype) {
+        loading = true
         
         model.fetchTop(page: page, subtype: subtype) { [weak self] (result) in
             switch result {
@@ -28,8 +30,9 @@ class HomePageViewModel: ObservableObject {
                 
             case .failure(let error):
                 print("HomePage Error: \(error)")
-                self?.handleError(error)
+                self?.handleError(error)            
             }
+            self?.loading = false
         }
         
     }
