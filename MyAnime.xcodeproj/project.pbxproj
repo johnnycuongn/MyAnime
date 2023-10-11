@@ -28,6 +28,7 @@
 		40CE0FE12ACC62CA00F93427 /* FavouriteAnimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FE02ACC62CA00F93427 /* FavouriteAnimeView.swift */; };
 		40CE0FE32ACC632B00F93427 /* FavouriteAnimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FE22ACC632B00F93427 /* FavouriteAnimeViewModel.swift */; };
 		40CE0FE72ACC696B00F93427 /* AnimeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FE62ACC696B00F93427 /* AnimeDetailsViewModel.swift */; };
+		40CE0FE92ACE7D2200F93427 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CE0FE82ACE7D2200F93427 /* ColorExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		40CE0FE02ACC62CA00F93427 /* FavouriteAnimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteAnimeView.swift; sourceTree = "<group>"; };
 		40CE0FE22ACC632B00F93427 /* FavouriteAnimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteAnimeViewModel.swift; sourceTree = "<group>"; };
 		40CE0FE62ACC696B00F93427 /* AnimeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimeDetailsViewModel.swift; sourceTree = "<group>"; };
+		40CE0FE82ACE7D2200F93427 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				40CE0FD52ACBCC9F00F93427 /* AnimeCardView.swift */,
+				40CE0FE82ACE7D2200F93427 /* ColorExtensions.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				40CE0FC82ACB8A0C00F93427 /* ServicesExtensions.swift in Sources */,
 				40CE0FC52ACB89B800F93427 /* JikanAPI.swift in Sources */,
 				40CE0FCD2ACB8ABD00F93427 /* Model.swift in Sources */,
+				40CE0FE92ACE7D2200F93427 /* ColorExtensions.swift in Sources */,
 				40CE0FAF2AC701C700F93427 /* NetworkManager.swift in Sources */,
 				40CE0FC12ACB88E600F93427 /* AnimeEntity+CoreDataClass.swift in Sources */,
 				40CE0FC22ACB88E600F93427 /* AnimeEntity+CoreDataProperties.swift in Sources */,

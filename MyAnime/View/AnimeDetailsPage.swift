@@ -19,8 +19,7 @@ struct AnimeDetailsPage: View {
     var body: some View {
         ZStack {
             // Background color
-            Color.gray.opacity(0.1)
-                .ignoresSafeArea()
+            Color.app.main.edgesIgnoringSafeArea(.all)
             
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {

@@ -17,20 +17,31 @@ struct HomePageView: View {
     
     var body: some View {
         ZStack {
+            Color.app.main.edgesIgnoringSafeArea(.all)
+            
             if viewModel.loading {
                 ProgressView()
                     .progressViewStyle(CircularProgressViewStyle(tint: .blue))
                     .scaleEffect(2, anchor: .center)
-            } else {
-                ScrollView {
-                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
-                        ForEach(viewModel.topAnimes, id: \.malID) { anime in
-                            AnimeCardView(anime: anime)
+            }
+            
+            ScrollView {
+                LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
+                    ForEach(Array(viewModel.topAnimes.enumerated()), id: \.1.malID) { index, anime in
+                        AnimeCardView(anime: anime)
+                        if index == viewModel.topAnimes.count - 5 { // 5 from the end
+                            Spacer(minLength: 0)
+                                .onAppear(perform: {
+                                    print("loading more pagaes")
+                                    viewModel.loadNextPage()
+                                })
                         }
                     }
-                    .padding(16)
                 }
+                .padding(16)
             }
+            
+
         }
     }
 }

@@ -14,6 +14,7 @@ struct FavouriteAnimeCardView: View {
     
     var body: some View {
             ZStack(alignment: .bottom) {
+                Color.app.main.edgesIgnoringSafeArea(.all)
                 if let image = anime.imageData, let uiImage = UIImage(data: image) {
                     Image(uiImage: uiImage)
                     .resizable()

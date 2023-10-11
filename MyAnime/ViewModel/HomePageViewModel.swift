@@ -11,10 +11,11 @@ class HomePageViewModel: ObservableObject {
     @Published var topAnimes = [AnimeDetails]()
     @Published var error: String? = .none
     @Published var loading: Bool = false
+    var currentPage = 1
     
     let model: DefaultAnimeFetchRepository = DefaultAnimeFetchRepository()
     
-    func loadAnimes(page: Int = 2, subtype: AnimeTopSubtype) {
+    func loadAnimes(page: Int = 1, subtype: AnimeTopSubtype = .bydefault) {
         loading = true
         
         model.fetchTop(page: page, subtype: subtype) { [weak self] (result) in
@@ -35,6 +36,11 @@ class HomePageViewModel: ObservableObject {
             self?.loading = false
         }
         
+    }
+    
+    func loadNextPage() {
+        currentPage += 1
+        self.loadAnimes(page: currentPage)
     }
     
     fileprivate func handleError(_ error: Error) {
