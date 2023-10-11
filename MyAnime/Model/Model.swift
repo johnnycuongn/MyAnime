@@ -211,6 +211,12 @@ class TopAnimeResponse: AnimeThumbnailResponse {
 
 }
 
+struct SearchAnimeMainResponse: Decodable {
+    
+    var data: [AnimeDetails]
+
+}
+
 class AnimeThumbnailResponse: Decodable {
     var malID: Int
     var imageURL: URL?

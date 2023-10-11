@@ -105,7 +105,7 @@ class JikanAnimeAPI {
         return URL(string: baseURL + "/top/anime")! }
     
     private var search: URL {
-        return URL(string: baseURL + "/search/anime")! }
+        return URL(string: baseURL + "/anime")! }
     
     private var genre: URL {
         return URL(string: baseURL + "/genre/anime")! }

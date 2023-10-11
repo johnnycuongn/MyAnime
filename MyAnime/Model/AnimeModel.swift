@@ -87,4 +87,42 @@ class DefaultAnimeFetchRepository {
             }
         }
     }
+    
+    // MARK: SEARCH ANIMES
+    var currentSearchDataTask: URLSessionTask?
+    
+    func fetchSearch(page: Int, query: String, completion: @escaping (Result<[AnimeDetails], Error>) -> Void) {
+        currentSearchDataTask?.cancel()
+        
+        guard !query.trimmingCharacters(in: .whitespaces).isEmpty else {
+            completion(.success([]))
+            return
+        }
+        
+        let endpointURL = apiPath.search(page: page, query: query)
+        print("Search Fetch URL: \(endpointURL)")
+        
+
+        currentSearchDataTask = networkManager.request(url: endpointURL) { (data,error) in
+            guard let data = data else {
+                completion(.failure(AnimeFetchError.invalidData))
+                return
+            }
+            
+            do {
+                let searchReponseDTO = try JSONDecoder().decode(SearchAnimeMainResponse.self, from: data)
+                
+                print("Success search")
+                print(searchReponseDTO)
+                
+                DispatchQueue.main.async {
+                    completion(.success(searchReponseDTO.data))
+                }
+            }
+            catch let error {
+                print("SearchAnimeService: \(error)")
+                completion(.failure(error))
+            }
+        }
+    }
 }

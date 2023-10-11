@@ -51,7 +51,15 @@ class HomePageViewModel: ObservableObject {
             isSearching = false
         } else {
             isSearching = true
-            searchResults = topAnimes.filter { $0.title.lowercased().contains(searchText.lowercased()) }
+//            searchResults = topAnimes.filter { $0.title.lowercased().contains(searchText.lowercased()) }
+            model.fetchSearch(page: 1, query: searchText) { result in
+                switch result {
+                    case .success(let animes):
+                        self.searchResults = animes
+                    case .failure(let _):
+                        self.error = "Error loading searching anime"
+                }
+            }
         }
     }
     
