@@ -32,7 +32,10 @@ class AnimeDetailsViewModel: ObservableObject {
         print("Favourite anime \(id)")
         self.favouriteModel.add(id: id, imageURL: imageURL, title: title, date: Date()) { success in
             if success {
+                self.error = ""
                 self.isAnimeFavorited = true
+            } else {
+                self.error = "Failed to favorite anime \(title)"
             }
         }
         
@@ -41,7 +44,10 @@ class AnimeDetailsViewModel: ObservableObject {
     private func unfavoriteAnime(id: Int) {
         self.favouriteModel.remove(id: id) { success in
             if success {
+                self.error = ""
                 self.isAnimeFavorited = false
+            } else {
+                self.error = "Failed to unfavourite anime"
             }
         }
     }

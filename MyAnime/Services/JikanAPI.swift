@@ -116,7 +116,7 @@ class JikanAnimeAPI {
 }
 
 extension JikanAnimeAPI: APIPath {
-    // MARK: TOP
+    // MARK: TOP ANIMES PATH
     func top(at page: Int = 1, subtype: AnimeTopSubtype) -> URL {
         var fetchURL = top.appending(queryItems: [URLQueryItem(name: "page", value: "\(page)")])
         
@@ -133,14 +133,14 @@ extension JikanAnimeAPI: APIPath {
         return fetchURL
     }
     
-    // MARK: ANIME
+    // MARK: SINGLE ANIME
     func anime(id: Int) -> URL {
         let fetchURL = anime.appendingPathComponent(String(id))
         
         return fetchURL
     }
     
-    // MARK: SEARCH
+    // MARK: SEARCH ANIMES
     func search(page: Int, query: String) -> URL {
         let endQuery: [SearchParameter: String]
         
@@ -166,6 +166,7 @@ extension JikanAnimeAPI: APIPath {
         return fetchURL
     }
     
+    // MARK: SEARCH ANIME BY SEARCH TYPE
     func search(_ types: SearchType...) -> URL {
         var endQuery: [SearchParameter: String] = [:]
         

@@ -53,6 +53,7 @@ class DefaultFavoriteAnimeModel: FavouriteAnimeModel {
         self.storage = storage
     }
     
+    // Get favourite animes from corea data
     func getAnimes(_ completion: @escaping (Result<[FavouriteAnime], Error>) -> Void) {
         storage.performBackgroundTask { (context) in
             do {
@@ -73,6 +74,7 @@ class DefaultFavoriteAnimeModel: FavouriteAnimeModel {
         }
     }
     
+    // Add anime to favorite anime database
     func add(id: Int, imageURL: String, title: String, date: Date?, completion: @escaping (Bool) -> Void) {
         let entity = AnimeEntity(context: storage.context)
         
@@ -99,6 +101,7 @@ class DefaultFavoriteAnimeModel: FavouriteAnimeModel {
         
     }
     
+    // Remove anime from favourite database
     func remove(id: Int, completion: @escaping (Bool) -> Void) {
         let request = requestFor(id: id)
         
@@ -130,6 +133,7 @@ class DefaultFavoriteAnimeModel: FavouriteAnimeModel {
             
     }
     
+    // Check if the anime is saved in the database
     func isIDExist(_ id: Int, completion: @escaping (Bool) -> Void) {
         let request = requestFor(id: id)
         
@@ -156,6 +160,8 @@ class DefaultFavoriteAnimeModel: FavouriteAnimeModel {
     }
     
     // MARK: HELPERS
+    
+    // Core data GET request for Anime Entity
     private func fetchRequest() -> NSFetchRequest<AnimeEntity> {
         let request = AnimeEntity.fetchRequest() as NSFetchRequest<AnimeEntity>
         

@@ -57,6 +57,7 @@ final class NetworkManager: Networking {
         self.session = session
     }
     
+    // GET REQUEST to a URL
     @discardableResult func request(url: URL, completion: @escaping (Data?, Error?) -> Void) -> URLSessionTask {
         let task = session.dataTask(with: url) { (data, response, error) in
             do {

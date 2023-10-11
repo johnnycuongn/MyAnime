@@ -117,6 +117,8 @@ class AnimeDetails: Decodable {
 //        studios = try container.decode([StudioDisplay].self, forKey: .studios)
     }
     
+    
+    // Return mock data for SwiftUI Previews
     static func mock() throws -> AnimeDetails? {
         let jsonString = """
         {

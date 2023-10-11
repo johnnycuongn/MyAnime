@@ -59,9 +59,9 @@ class HomePageViewModel: ObservableObject {
         if let error = error as? HTTPError {
             switch error {
             case .invalidResponse:
-                self.error = "Unable to load animes"
+                self.error = "Unable to load animes. Please try again"
             default:
-                self.error = "Failed to load"
+                self.error = "Failed to load animes."
             }
         }
     }
