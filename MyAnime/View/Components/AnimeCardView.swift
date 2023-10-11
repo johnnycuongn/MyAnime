@@ -38,6 +38,23 @@ struct AnimeCardView: View {
                     .foregroundColor(.white)
                     .lineLimit(2)
                     .multilineTextAlignment(.center)
+                
+                // Rank at the top right
+                if let rank = anime.rank {
+                    VStack {
+                        HStack {
+                            Spacer()
+                            Text("\(rank)")
+                                .font(.caption)
+                                .foregroundColor(.white)
+                                .frame(width: 24, height: 24)
+                                .background(Color.black.opacity(0.7))
+                                .clipShape(Circle())
+                                .padding([.top, .trailing], 2)
+                        }
+                        Spacer()
+                    }
+                }
             }
         }
     }
