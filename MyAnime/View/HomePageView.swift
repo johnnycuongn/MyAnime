@@ -20,11 +20,10 @@ struct HomePageView: View {
     
     var body: some View {
         ZStack {
-            Color.app.main.edgesIgnoringSafeArea(.all)
             
             if viewModel.loading {
                 ProgressView()
-                    .progressViewStyle(CircularProgressViewStyle(tint: .blue))
+                    .progressViewStyle(CircularProgressViewStyle(tint: .black))
                     .scaleEffect(2, anchor: .center)
             }
             
@@ -33,6 +32,11 @@ struct HomePageView: View {
                 TextField("Search for an anime...", text: $searchText, onCommit: {
                     viewModel.searchAnimes(searchText: searchText)
                 })
+                .overlay(
+                    RoundedRectangle(cornerRadius: 8)
+                        .stroke(Color.gray, lineWidth: 1)
+                )
+                .shadow(color: Color.gray.opacity(0.5), radius: 10, x: 0, y: 10)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding([.leading, .trailing, .top], 16)
                 .onChange(of: searchText) { newValue in
@@ -41,6 +45,7 @@ struct HomePageView: View {
                         viewModel.searchAnimes(searchText: newValue)
                     }
                 }
+                
                 
                 // Anime Grid
                 ScrollView {

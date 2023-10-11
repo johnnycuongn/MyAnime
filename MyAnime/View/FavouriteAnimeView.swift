@@ -14,7 +14,6 @@ struct FavouriteAnimeCardView: View {
     
     var body: some View {
             ZStack(alignment: .bottom) {
-                Color.app.main.edgesIgnoringSafeArea(.all)
                 if let image = anime.imageData, let uiImage = UIImage(data: image) {
                     Image(uiImage: uiImage)
                     .resizable()
@@ -69,16 +68,22 @@ struct FavouriteAnimeView: View {
     }
     
     var body: some View {
-        ScrollView {
-               LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
-                   ForEach(viewModel.animes, id: \.id) { anime in
-                       FavouriteAnimeCardView(anime: anime, viewModel: self.viewModel)
-                   }
-               }
-               .padding(16)
-        }.onAppear {
-            viewModel.load()
+        ZStack {
+            VStack {
+                ScrollView {
+                       LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
+                           ForEach(viewModel.animes, id: \.id) { anime in
+                               FavouriteAnimeCardView(anime: anime, viewModel: self.viewModel)
+                           }
+                       }
+                       .padding(16)
+                }.onAppear {
+                    viewModel.load()
+                }
+            }
+            
         }
+        
     }
 }
 

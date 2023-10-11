@@ -14,6 +14,16 @@ struct AnimeDetailsPage: View {
     
     init(anime: AnimeDetails) {
         self.anime = anime
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithTransparentBackground()
+        appearance.backgroundColor = .clear // or whatever color you want
+        appearance.backButtonAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.black]
+
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        UINavigationBar.appearance().standardAppearance = appearance
+        
+        UINavigationBar.appearance().tintColor = .black
     }
 
     var body: some View {
@@ -108,28 +118,5 @@ struct AnimeDetailsPage: View {
         .onAppear {
             viewModel.load(anime: anime)
         }
-    }
-}
-struct AnimeDetailsPage_Previews: PreviewProvider {
-    static var previews: some View {
-        do {
-            let data = try AnimeDetails.mock()
-            print("Mock data \(String(describing: data))")
-            
-            guard data != nil else {
-                return AnyView(VStack {
-                   Text("No Data")
-               })
-            }
-            
-            return AnimeDetailsPage(anime: data!)
-        }
-        catch let error {
-            print(error)
-        }
-        
-        return AnyView(VStack {
-           Text("Error")
-       })
     }
 }

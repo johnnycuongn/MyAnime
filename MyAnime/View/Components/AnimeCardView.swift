@@ -59,29 +59,3 @@ struct AnimeCardView: View {
         }
     }
 }
-
-struct AnimeCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        do {
-            let data = try AnimeDetails.mock()
-            print("Mock data \(String(describing: data))")
-            
-            guard data != nil else {
-                return AnyView(VStack {
-                   Text("No Data")
-                   // Other common elements
-               })
-            }
-            
-            return AnimeCardView(anime: data!)
-        }
-        catch let error {
-            print(error)
-        }
-        
-        return AnyView(VStack {
-           Text("Error")
-           // Other common elements
-       })
-    }////
-}
