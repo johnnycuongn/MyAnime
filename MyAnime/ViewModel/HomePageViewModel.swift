@@ -43,6 +43,18 @@ class HomePageViewModel: ObservableObject {
         self.loadAnimes(page: currentPage)
     }
     
+    @Published var searchResults: [AnimeDetails] = []
+    @Published var isSearching: Bool = false
+    
+    func searchAnimes(searchText: String) {
+        if searchText.isEmpty {
+            isSearching = false
+        } else {
+            isSearching = true
+            searchResults = topAnimes.filter { $0.title.lowercased().contains(searchText.lowercased()) }
+        }
+    }
+    
     fileprivate func handleError(_ error: Error) {
         if let error = error as? HTTPError {
             switch error {
