@@ -95,7 +95,8 @@ enum SearchParameter: String {
 
 // MARK: - JikanAPI
 class JikanAnimeAPI {
-
+    //  Base on https://jikan.moe API
+    
     private let baseURL: String = "https://api.jikan.moe/v4"
     
     private var anime: URL { return
@@ -116,6 +117,8 @@ class JikanAnimeAPI {
 }
 
 extension JikanAnimeAPI: APIPath {
+    // URL Functionality for each API path
+    
     // MARK: TOP ANIMES PATH
     func top(at page: Int = 1, subtype: AnimeTopSubtype) -> URL {
         var fetchURL = top.appending(queryItems: [URLQueryItem(name: "page", value: "\(page)")])
