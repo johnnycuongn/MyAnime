@@ -56,6 +56,7 @@ struct AnimeDetailsPage: View {
                         HStack {
                             Image(systemName: "star.fill")
                                 .foregroundColor(.yellow)
+                                .frame(width: 12)
                             Text("\(anime.score ?? 0.0, specifier: "%.1f")")
                                 .font(.caption)
                             Text("-")
@@ -65,18 +66,21 @@ struct AnimeDetailsPage: View {
                         HStack {
                             Image(systemName: "person.fill")
                                 .foregroundColor(.blue)
+                                .frame(width: 12)
                             Text("\(anime.members ?? 0)")
                                 .font(.caption)
                         }
                         HStack {
                             Image(systemName: "flame.fill")
                                 .foregroundColor(.red)
+                                .frame(width: 12)
                             Text("\(anime.popularity ?? 0)")
                                 .font(.caption)
                         }
                         HStack {
                             Image(systemName: "film.fill") // or another equivalent icon of your choice
                                 .foregroundColor(.purple)
+                                .frame(width: 12)
                             Text("\(anime.episodes ?? 0)")
                                 .font(.caption)
                         }
