@@ -1,9 +1,15 @@
 # MyAnime iOS App
 
-GitHub Link: [GitHub - johnnycuongn/MyAnime](https://github.com/johnnycuongn/MyAnime)
-
 If you want to look for a mobile app that is updated with top animes that are in the market, look no further to this MyAnime app. 
-The app provides top animes with user ranking, all from your mobile app. You can have the ability to favourite anime so you can know which anime to watch later
+The app provides top animes with user ranking, all from your mobile app. You can have the ability to favourite anime so you can know which anime to watch later.
+
+💡 This app is built using [`Jikan`](https://jikan.moe) REST API.
+
+⚠️ No authentication or API key needed
+
+This is a SwifUI version, updated on top of UIKit version.
+
+UIKit AnimeList Version: [`AnimeList`](https://github.com/johnnycuongn/AnimeList)
 
 ### Features
 
